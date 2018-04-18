@@ -56,7 +56,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleSendMsg(ActionEvent event) {
         String msg = chatMsgTxt.getText();
-        chatMsgTxt.setText("");
+        chatMsgTxt.setText("UMM HI");
         client.sendMsg(msg);
     }
     
