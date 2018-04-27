@@ -21,7 +21,8 @@ public class Client {
     public BufferedReader in;
     public PrintWriter out;
     
-    public String serverIP = "192.168.14.172";
+    private String serverIP = "192.168.1.7";
+    private int port = 15658;
     private String name;
     private TextArea chatAreaTxt;
     
@@ -40,7 +41,7 @@ public class Client {
     
     public void run() throws IOException {
         // Make connection and initialize streams
-        Socket socket = new Socket("192.168.14.172", 9005);
+        Socket socket = new Socket(serverIP, 15658);
         in = new BufferedReader(new InputStreamReader(
             socket.getInputStream()));
         out = new PrintWriter(socket.getOutputStream(), true);

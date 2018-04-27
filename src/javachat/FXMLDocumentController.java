@@ -8,6 +8,8 @@ package javachat;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -45,18 +47,26 @@ public class FXMLDocumentController implements Initializable {
             try {
                 client.run();
             } catch(IOException e) {
-                
+                e.printStackTrace();
             }
         };
         
         new Thread(serverListener).start();
     }
     
-        
+    @FXML
+    private void handleEnterKey(KeyEvent e) {
+        if(e.getCode() == KeyCode.ENTER) {
+            String msg = chatMsgTxt.getText();
+            chatMsgTxt.setText("");
+            client.sendMsg(msg);
+        }
+    }
+    
     @FXML
     private void handleSendMsg(ActionEvent event) {
         String msg = chatMsgTxt.getText();
-        chatMsgTxt.setText("UMM HI");
+        chatMsgTxt.setText("");
         client.sendMsg(msg);
     }
     
