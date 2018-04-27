@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="624.0" prefWidth="869.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChatControlller">
+<BorderPane prefHeight="624.0" prefWidth="869.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javachat.ChatController">
    <top>
       <VBox prefHeight="0.0" prefWidth="856.0" BorderPane.alignment="CENTER">
          <children>

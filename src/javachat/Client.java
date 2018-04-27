@@ -21,7 +21,7 @@ public class Client {
     public BufferedReader in;
     public PrintWriter out;
     
-    private String serverIP = "192.168.1.7";
+    private String serverIP = "192.168.14.172";
     private int port = 15658;
     private String name;
     private TextArea chatAreaTxt;

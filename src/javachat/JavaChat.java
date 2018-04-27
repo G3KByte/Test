@@ -11,6 +11,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+
+
 /**
  *
  * @author jhoel
@@ -19,7 +21,9 @@ public class JavaChat extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Chat.fxml"));
+        
+        //stage.setOnCloseRequest(e -> ChatControlller.closeProgram());
         
         Scene scene = new Scene(root);
         
