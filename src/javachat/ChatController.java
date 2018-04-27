@@ -14,6 +14,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
+import java.util.HashSet;
+
 import java.io.IOException;
 
 import javachat.*;
@@ -22,7 +24,7 @@ import javachat.*;
  *
  * @author jhoel
  */
-public class FXMLDocumentController implements Initializable {
+public class ChatController implements Initializable {
     
     @FXML
     private TextField userTxt;
@@ -36,6 +38,10 @@ public class FXMLDocumentController implements Initializable {
     private TextField chatMsgTxt;
     
     private Client client;
+    
+    private static Thread thread;
+    @FXML
+    private Button signOnBtn;
     
     @FXML
     private void handleSignOn(ActionEvent event) {
@@ -51,7 +57,9 @@ public class FXMLDocumentController implements Initializable {
             }
         };
         
-        new Thread(serverListener).start();
+        thread = new Thread(serverListener);
+        
+        thread.start();
     }
     
     @FXML
@@ -75,4 +83,8 @@ public class FXMLDocumentController implements Initializable {
         // TODO
     }
     
+    
+    public static void closeProgram() {
+        thread.stop();
+    }
 }
