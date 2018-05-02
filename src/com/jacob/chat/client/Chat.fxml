@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="624.0" prefWidth="869.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChatControlller">
+<BorderPane fx:id="rootPane" onDragDropped="#handleDrop" onDragOver="#handleDragOver" prefHeight="624.0" prefWidth="869.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jacob.chat.client.ChatController">
    <top>
       <VBox prefHeight="0.0" prefWidth="856.0" BorderPane.alignment="CENTER">
          <children>
@@ -30,41 +30,7 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <HBox prefHeight="0.0" prefWidth="856.0">
-               <children>
-                  <Label text="User:">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding>
-                  </Label>
-                  <TextField fx:id="userTxt">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </TextField>
-                  <Label text="Password:">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding>
-                  </Label>
-                  <PasswordField fx:id="passTxt">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </PasswordField>
-                  <Button fx:id="signOnBtn" mnemonicParsing="false" onAction="#handleSignOn" text="Sign In">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
+            <HBox prefHeight="0.0" prefWidth="856.0" />
          </children>
       </VBox>
    </top>
@@ -100,7 +66,7 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </TextField>
-                  <Button mnemonicParsing="false" onAction="#handleSendMsg" text="Send" HBox.hgrow="ALWAYS">
+                  <Button fx:id="sendMsgBtn" mnemonicParsing="false" onAction="#handleSendMsg" text="Send" HBox.hgrow="ALWAYS">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
