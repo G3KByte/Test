@@ -41,7 +41,7 @@ public class SignIn {
         // Try to get application icon, display error and continue processing if it is not available
         System.out.println("Attempting to get application icon");
         try {
-            window.getIcons().add(new Image(SignIn.class.getClassLoader().getResourceAsStream("com/jacob/chat/images/logo.jpg")));
+            window.getIcons().add(new Image(SignIn.class.getClassLoader().getResourceAsStream("com/jacob/chat/images/globe_logo.png")));
             System.out.println("Application icon successfully loaded");
         } catch(NullPointerException npe) {
             System.out.println("ERROR: Could not load application icon");

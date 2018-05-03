@@ -60,15 +60,16 @@ public class JavaChat extends Application {
             // Try to get application icon, display error and continue processing if it is not available
             System.out.println("Attempting to get application icon");
             try {
-                window.getIcons().add(new Image(this.getClass().getResourceAsStream("com/jacob/chat/images/logo.jpg")));
+                window.getIcons().add(new Image(this.getClass().getResourceAsStream("globe_logo.png")));
                 System.out.println("Application icon successfully loaded");
             } catch(NullPointerException npe) {
-                System.out.println("ERROR: Could not load application icon");
+                System.out.println("ERROR: Could not load application icoAn");
             }
             
             // Add scene to the window.
             window.setScene(scene);
             // Show window
+            window.setTitle("RCN Chat JACOB HOEL");
             window.show();
         } catch (IllegalArgumentException iae) {
             System.out.println("ERROR: User not signed in");
@@ -88,5 +89,4 @@ public class JavaChat extends Application {
         System.out.println("Starting Application");
         launch(args);
     }
-    
 }
